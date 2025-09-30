@@ -58,4 +58,4 @@ Projects follows this module to create their VPC.
 It doesn’t change when you stop/start an instance.  
 Mostly used for EC2 or NAT Gateways that need a fixed IP.  
 
-👉 **In plain words:** VPC is just your own private area in AWS where you control which resources can talk to the internet and which stay safe inside.
+👉 **In plain words:** VPC is just your own private area in AWS where you control which resources can talk to the internet and which stay safe inside..
