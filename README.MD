@@ -26,16 +26,28 @@ Projects follows this module to create their VPC.
 ---
 
 ## Main Parts
-1. **CIDR Block** → Network size (like 10.0.0.0/16).  
-2. **Subnet** → Small section of the network.  
-   - **Public Subnet** → can reach internet.  
-   - **Private Subnet** → no internet directly.  
-3. **Internet Gateway (IGW)** → Door to internet for public subnet.  
-4. **NAT Gateway** → Lets private subnet go *out* to internet (updates, patches), but blocks incoming.  
-5. **Route Table** → Map that decides where traffic goes.  
-6. **Security Group** → Lock for EC2 (instance-level).  
-7. **NACL (Network ACL)** → Lock for subnets.  
-8. **Peering / Endpoints** → Connect VPCs or AWS services privately.  
+- **CIDR Block (Classless Inter-Domain Routing Block)**  
+  The “address range” of your network.  
+  Example: `10.0.0.0/16` covers `10.0.0.0` to `10.0.255.255`.
+- **Subnet (Subnetwork)**  
+  A smaller section of the main network, like a neighborhood in a city.
+- **Public Subnet**  
+  A subnet that can connect directly to the internet.
+- **Private Subnet**  
+  A subnet that **cannot** connect directly to the internet; used for internal servers.
+- **IGW (Internet Gateway)**  
+  A door that allows your public subnet to reach the internet.
+- **NAT Gateway (Network Address Translation Gateway)**  
+  Lets private subnet go **out** to the internet (for updates) but blocks incoming traffic.
+- **Route Table**  
+  A map that tells the network where to send traffic.
+- **Security Group (SG)**  
+  A “door lock” for individual EC2 instances; controls inbound/outbound traffic.
+- **NACL (Network Access Control List)**  
+  A “bigger lock” for the whole subnet; controls traffic at subnet level.
+- **VPC Peering / Endpoints**  
+  Private connections to other VPCs or AWS services without going through the internet.
+  
 
 ---
 
