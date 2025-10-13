@@ -9,8 +9,15 @@
 crash.log
 
 # Sensitive variable files
-*.tfvars
+
 *.tfvars.json
+
+# ignore all tfvars
+*.tfvars
+
+# except terraform.tfvars
+!terraform.tfvars
+
 
 # Override files
 override.tf
