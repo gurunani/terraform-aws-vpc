@@ -12,6 +12,13 @@ crash.log
 
 *.tfvars.json
 
+# ignore all tfvars
+*.tfvars
+
+# except terraform.tfvars
+!terraform.tfvars
+
+
 # Override files
 override.tf
 override.tf.json
