@@ -7,7 +7,7 @@ resource "aws_vpc" "main" {
     var.vpc_tags,
     local.common_tags,
     {
-        Name = "${var.project}-${var.Environment}"
+        Name = "${var.project}-${var.environment}"
     }
   )
 }
@@ -19,7 +19,7 @@ resource "aws_internet_gateway" "main" {
     var.igw_tags,
     local.common_tags,
     {
-        Name = "${var.project}-${var.Environment}"
+        Name = "${var.project}-${var.environment}"
     }
   )
 }
@@ -36,7 +36,7 @@ resource "aws_subnet" "public_ip" {
     var.public_subnet_tags,
     local.common_tags,
     {
-        Name = "${var.project}-${var.Environment}-public-${local.az_names[count.index]}"
+        Name = "${var.project}-${var.environment}-public-${local.az_names[count.index]}"
     }
   )
 }
@@ -53,7 +53,7 @@ resource "aws_subnet" "private_ip" {
     var.private_subnet_tags,
     local.common_tags,
     {
-        Name = "${var.project}-${var.Environment}-private-${local.az_names[count.index]}"
+        Name = "${var.project}-${var.environment}-private-${local.az_names[count.index]}"
     }
   )
 }
@@ -70,7 +70,7 @@ resource "aws_subnet" "database" {
     var.database_subnet_tags,
     local.common_tags,
     {
-        Name = "${var.project}-${var.Environment}-database-${local.az_names[count.index]}"
+        Name = "${var.project}-${var.environment}-database-${local.az_names[count.index]}"
     }
   )
 }
@@ -81,7 +81,7 @@ resource "aws_eip" "nat" {
     var.eip_tags,
     local.common_tags,
     {
-        Name = "${var.project}-${var.Environment}"
+        Name = "${var.project}-${var.environment}"
     }
   )
 }
@@ -92,7 +92,7 @@ resource "aws_nat_gateway" "main" {
     var.nat_gateway_tags,
     local.common_tags,
     {
-        Name = "${var.project}-${var.Environment}"
+        Name = "${var.project}-${var.environment}"
     }
   )
   # To ensure proper ordering, it is recommended to add an explicit dependency
@@ -107,7 +107,7 @@ resource "aws_route_table" "public" {
     var.public_route_table_tags,
     local.common_tags,
     {
-        Name = "${var.project}-${var.Environment}-public"
+        Name = "${var.project}-${var.environment}-public"
     }
   )
 }
@@ -119,7 +119,7 @@ resource "aws_route_table" "private" {
     var.private_route_table_tags,
     local.common_tags,
     {
-        Name = "${var.project}-${var.Environment}-private"
+        Name = "${var.project}-${var.environment}-private"
     }
   )
 }
@@ -131,7 +131,7 @@ resource "aws_route_table" "database" {
     var.database_route_table_tags,
     local.common_tags,
     {
-        Name = "${var.project}-${var.Environment}-database"
+        Name = "${var.project}-${var.environment}-database"
     }
   )
 }

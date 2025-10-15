@@ -15,7 +15,7 @@ resource "aws_vpc_peering_connection" "default" {
     var.vpc_peering_tags,
     local.common_tags,
     {
-        Name = "${var.project}-${var.Environment}-default"
+        Name = "${var.project}-${var.environment}-default"
     }
   )  
 }
